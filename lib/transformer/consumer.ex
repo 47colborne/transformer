@@ -12,9 +12,6 @@ defmodule Transformer.Consumer do
   end
 
   def handle_events(events, _from, state) do
-    # Wait for a second.
-    :timer.sleep(1000)
-
     # Inspect the events.
     IO.inspect(events)
 
