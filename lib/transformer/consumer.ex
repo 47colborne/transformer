@@ -3,8 +3,8 @@ defmodule Transformer.Consumer do
   alias Transformer.Consumer
   use GenStage
 
-  def start_link do
-    GenStage.start_link(Consumer, %{file: File.open!("output.txt", [:write, :utf8]), counter: 1})
+  def start_link(file) do
+    GenStage.start_link(Consumer, %{file: file, counter: 1})
   end
 
   def init(state) do
